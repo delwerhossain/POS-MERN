@@ -66,7 +66,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({
     }
     
     try {
-      const res = await axios.post("http://localhost:3000/customer", {
+      const res = await axios.post("http://pos-mern-nine.vercel.app/customer", {
         customerName,
         phone,
         address,

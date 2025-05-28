@@ -42,7 +42,7 @@ const ShowCategories: React.FC<ShowCategoriesProps> = ({
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/category/${id}`);
+        await axios.delete(`http://pos-mern-nine.vercel.app/category/${id}`);
 
         setCategories((prev) => prev.filter((cat) => cat._id !== id));
 
@@ -64,7 +64,7 @@ const ShowCategories: React.FC<ShowCategoriesProps> = ({
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/product")
+      .get("http://pos-mern-nine.vercel.app/product")
       .then((res) => {
         const data = res.data;
         const filterData = data.filter(

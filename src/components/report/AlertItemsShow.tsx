@@ -63,7 +63,7 @@ const AlertItemsShow: React.FC<Props> = ({ products }) => {
               <td className="px-4 py-2">
                 {product.photo?.data ? (
                   <img
-                    src={`http://localhost:3000/product/image/${product._id}`}
+                    src={`http://pos-mern-nine.vercel.app/product/image/${product._id}`}
                     alt={product.productName}
                     className="h-10 w-10 rounded object-cover"
                   />

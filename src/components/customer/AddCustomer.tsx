@@ -23,7 +23,7 @@ export default function AddCustomer() {
     console.log(data);
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3000/customer", {
+      const response = await fetch("http://pos-mern-nine.vercel.app/customer", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

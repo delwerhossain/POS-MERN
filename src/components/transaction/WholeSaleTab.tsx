@@ -29,7 +29,7 @@ export default function WholeSaleTab() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/invoice/wholesale")
+      .get("http://pos-mern-nine.vercel.app/invoice/wholesale")
       .then((res) => {
         setTransactions(res.data);
         setLoading(false);
@@ -70,7 +70,7 @@ export default function WholeSaleTab() {
   // Handle Delete
   const handleDelete = (id: string) => {
     axios
-      .delete(`http://localhost:3000/invoice/${id}`)
+      .delete(`http://pos-mern-nine.vercel.app/invoice/${id}`)
       .then(() => {
         setTransactions(transactions.filter((tx) => tx._id !== id));
       })
@@ -79,7 +79,7 @@ export default function WholeSaleTab() {
 
   // handle invoice view
   const handleInvoiceView = async (id: string) => {
-    await axios.get(`http://localhost:3000/invoice/${id}`).then((res) => {
+    await axios.get(`http://pos-mern-nine.vercel.app/invoice/${id}`).then((res) => {
       navigate("/invoiceView", { state: { invoice: res.data } });
     });
   };
@@ -96,7 +96,7 @@ export default function WholeSaleTab() {
 
     try {
       const res = await axios.put(
-        `http://localhost:3000/invoice/${editingInvoice._id}`,
+        `http://pos-mern-nine.vercel.app/invoice/${editingInvoice._id}`,
         updatedData
       );
 

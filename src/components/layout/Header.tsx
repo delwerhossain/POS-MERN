@@ -11,7 +11,7 @@ const Header: React.FC = () => {
  
   const fetchLowStockItems = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/product/low-stock");
+      const res = await axios.get("http://pos-mern-nine.vercel.app/product/low-stock");
       const data = res.data;
       setProducts(data);
     } catch (error) {

@@ -49,7 +49,7 @@ export default function UpdateCustomerModal({
   const onSubmit = async (data: any) => {
     try {
       await axios
-        .patch(`http://localhost:3000/customer/${customer._id}`, data)
+        .patch(`http://pos-mern-nine.vercel.app/customer/${customer._id}`, data)
         .then((res) => {
           const updatedCustomer = res.data;
 

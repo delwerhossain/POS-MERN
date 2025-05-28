@@ -79,7 +79,7 @@ const Add: React.FC = () => {
         formData.append("photo", data.photo[0]);
       }
 
-      const response = await fetch("http://localhost:3000/product", {
+      const response = await fetch("http://pos-mern-nine.vercel.app/product", {
         method: "POST",
         body: formData,
       });
@@ -111,7 +111,7 @@ const Add: React.FC = () => {
   useEffect(() => {
     generateNumber();
     axios
-      .get("http://localhost:3000/category")
+      .get("http://pos-mern-nine.vercel.app/category")
       .then((res) => {
         setAllCategories(res.data);
       })

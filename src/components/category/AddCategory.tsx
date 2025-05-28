@@ -27,7 +27,7 @@ const AddCategory: React.FC = () => {
   const handleCategorySubmit = async (data: FormValues) => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3000/category", {
+      const response = await fetch("http://pos-mern-nine.vercel.app/category", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

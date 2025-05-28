@@ -62,7 +62,7 @@ const Invoice: React.FC<InvoiceProps> = ({
       const change = balance > 0 ? balance : 0;
 
       try {
-        const response = await axios.post("http://localhost:3000/invoice", {
+        const response = await axios.post("http://pos-mern-nine.vercel.app/invoice", {
           saleSystem: saleSystemValue,
           customer: {
             name: selectWalking.customerName || "Walking Customer",

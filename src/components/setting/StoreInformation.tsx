@@ -29,7 +29,7 @@ const onSubmit = async (data: FormValues) => {
         formData.append("logoUrl", logoPreview); // fallback old preview
       }
 
-      const url = "http://localhost:3000/setting";
+      const url = "http://pos-mern-nine.vercel.app/setting";
       const method = hasStoreData ? "patch" : "post";
 
       await axios[method](url, formData, {
@@ -61,7 +61,7 @@ const onSubmit = async (data: FormValues) => {
     useEffect(() => {
       const fetchSettings = async () => {
         try {
-          const res = await axios.get("http://localhost:3000/setting");
+          const res = await axios.get("http://pos-mern-nine.vercel.app/setting");
           const storeData = res.data?.data;
           if (storeData) {
             setHasStoreData(true);
@@ -69,7 +69,7 @@ const onSubmit = async (data: FormValues) => {
 
             // ঠিক এইখানে logoUrl কে পুরো URL বানিয়ে preview করাও
             if (storeData.logoUrl) {
-              setLogoPreview(`http://localhost:3000/${storeData.logoUrl}`);
+              setLogoPreview(`http://pos-mern-nine.vercel.app/${storeData.logoUrl}`);
             }
           }
         } catch (err) {

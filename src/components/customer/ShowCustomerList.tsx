@@ -46,7 +46,7 @@ export default function ShowCustomerList({ customer, setCustomers }: Props) {
 
     if (result.isConfirmed) {
       try {
-        await axios.delete(`http://localhost:3000/customer/${id}`);
+        await axios.delete(`http://pos-mern-nine.vercel.app/customer/${id}`);
 
         setCustomers((prev) => prev.filter((cus) => cus._id !== id));
 

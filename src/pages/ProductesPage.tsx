@@ -24,7 +24,7 @@ const ProductesPage: React.FC = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://localhost:3000/product")
+      .get("http://pos-mern-nine.vercel.app/product")
       .then((res) => {
         setAllProduct(res.data);
         setLoading(false);

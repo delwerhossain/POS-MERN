@@ -33,7 +33,7 @@ export default function InvoiceView() {
 
   const handlePaymentDetailsView = async (id: number) => {
     await axios
-      .get(`http://localhost:3000/invoice/${id}/payment-details`)
+      .get(`http://pos-mern-nine.vercel.app/invoice/${id}/payment-details`)
       .then((res) => {
         const data = res.data;
         setPaymentDetailsData(data);

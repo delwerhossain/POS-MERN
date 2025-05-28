@@ -15,7 +15,7 @@ export default function UploadCsvFile() {
 
     try {
       const res = await axios.post(
-        "http://localhost:3000/product/upload-csv",
+        "http://pos-mern-nine.vercel.app/product/upload-csv",
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

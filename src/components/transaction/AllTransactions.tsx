@@ -28,7 +28,7 @@ export default function AllTransactions() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/invoice")
+      .get("http://pos-mern-nine.vercel.app/invoice")
       .then((res) => {
         setTransactions(res.data);
         setLoading(false);
@@ -68,7 +68,7 @@ export default function AllTransactions() {
   // Handle Delete
   const handleDelete = (id: string) => {
     axios
-      .delete(`http://localhost:3000/invoice/${id}`)
+      .delete(`http://pos-mern-nine.vercel.app/invoice/${id}`)
       .then(() => {
         setTransactions(transactions.filter((tx) => tx._id !== id));
       })
@@ -77,7 +77,7 @@ export default function AllTransactions() {
 
   // handle invoice view
   const handleInvoiceView = async (id: string) => {
-    await axios.get(`http://localhost:3000/invoice/${id}`).then((res) => {
+    await axios.get(`http://pos-mern-nine.vercel.app/invoice/${id}`).then((res) => {
       navigate("/invoiceView", { state: { invoice: res.data } });
     });
   };
@@ -94,7 +94,7 @@ export default function AllTransactions() {
 
     try {
       const res = await axios.put(
-        `http://localhost:3000/invoice/${editingInvoice._id}`,
+        `http://pos-mern-nine.vercel.app/invoice/${editingInvoice._id}`,
         updatedData
       );
 

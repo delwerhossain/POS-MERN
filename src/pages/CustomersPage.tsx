@@ -27,7 +27,7 @@ export default function CustomerTabs() {
   const itemsPerPage = 10;
 
   useEffect(() => {
-    axios.get("http://localhost:3000/customer").then((res) => {
+    axios.get("http://pos-mern-nine.vercel.app/customer").then((res) => {
       setCustomers(res.data);
       setCurrentPage(1); // Reset to first page when data changes
     });

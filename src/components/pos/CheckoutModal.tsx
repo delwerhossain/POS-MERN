@@ -55,7 +55,7 @@ const CheckoutModal: React.FC<CheckoutModalProps> = ({ onClose }) => {
   ];
   useEffect(() => {
     const handleGetProduct = async () => {
-      const res = await axios.get("http://localhost:3000/product");
+      const res = await axios.get("http://pos-mern-nine.vercel.app/product");
       const data = await res.data;
       setAllProduct(data);
     };

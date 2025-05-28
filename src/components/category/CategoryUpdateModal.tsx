@@ -35,7 +35,7 @@ export default function CategoryUpdateModal({
   const onSubmit = async (data) => {
     try {
       await axios
-        .patch(`http://localhost:3000/category/${product._id}`, data)
+        .patch(`http://pos-mern-nine.vercel.app/category/${product._id}`, data)
         .then((res) => {
           const updatedCategory = res.data;
 

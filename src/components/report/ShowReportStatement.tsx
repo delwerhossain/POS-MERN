@@ -46,7 +46,7 @@ export default function ShowReportStatement() {
 
   useEffect(() => {
     const fetchSettingInfo = async () => {
-      const res = await axios.get("http://localhost:3000/setting");
+      const res = await axios.get("http://pos-mern-nine.vercel.app/setting");
       const data = await res.data.data;
       setCompanyInfo(data);
     };

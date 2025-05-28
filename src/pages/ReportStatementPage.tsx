@@ -17,7 +17,7 @@ export default function ReportStatementPage() {
     }
 
     try {
-      const res = await axios.get("http://localhost:3000/invoice/report", {
+      const res = await axios.get("http://pos-mern-nine.vercel.app/invoice/report", {
         params: {
           fromDate: fromDate.toISOString().split("T")[0],
           toDate: toDate.toISOString().split("T")[0],

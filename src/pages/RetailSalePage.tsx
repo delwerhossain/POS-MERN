@@ -132,12 +132,12 @@ export default function RetailSalePage() {
 
   useEffect(() => {
     const handleGetProduct = async () => {
-      const res = await axios.get("http://localhost:3000/product");
+      const res = await axios.get("http://pos-mern-nine.vercel.app/product");
       const data = await res.data;
       setAllProduct(data);
     };
 
-    axios.get("http://localhost:3000/customer").then((res) => {
+    axios.get("http://pos-mern-nine.vercel.app/customer").then((res) => {
       const options = res.data.map((customer: any) => ({
         value: customer.customerId,
         label: `${customer.customerName} | ${customer.phone}`,
@@ -226,7 +226,7 @@ export default function RetailSalePage() {
                   >
                     <div className="overflow-hidden inline-block w-full h-28">
                       <img
-                        src={`http://localhost:3000/product/image/${product._id}`}
+                        src={`http://pos-mern-nine.vercel.app/product/image/${product._id}`}
                         alt={product.productName}
                         className="hover:scale-110 duration-500 transition-transform object-cover w-full h-full rounded-t-md "
                       />
@@ -294,7 +294,7 @@ export default function RetailSalePage() {
                       <motion.img
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 300 }}
-                        src={`http://localhost:3000/product/image/${product._id}`}
+                        src={`http://pos-mern-nine.vercel.app/product/image/${product._id}`}
                         alt={product.productName}
                         className="object-cover w-full h-full"
                       />

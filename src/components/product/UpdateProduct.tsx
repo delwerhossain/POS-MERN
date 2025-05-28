@@ -78,7 +78,7 @@ const UpdateProduct: React.FC<UpdateProductProps> = ({ product }) => {
       }
 
       const response = await fetch(
-        `http://localhost:3000/product/${product._id}`,
+        `http://pos-mern-nine.vercel.app/product/${product._id}`,
         {
           method: "PATCH",
           body: formData,
@@ -112,7 +112,7 @@ const UpdateProduct: React.FC<UpdateProductProps> = ({ product }) => {
   useEffect(() => {
     const fetchCategory = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/category");
+        const res = await axios.get("http://pos-mern-nine.vercel.app/category");
         setCategories(res.data);
       } catch (err) {
         console.log(err);

@@ -23,7 +23,7 @@ const CategoriesPage: React.FC = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get("http://localhost:3000/category").then((res) => {
+    axios.get("http://pos-mern-nine.vercel.app/category").then((res) => {
       setCategories(res.data);
       setLoading(false);
       setCurrentPage(1); // Reset page on tab change
