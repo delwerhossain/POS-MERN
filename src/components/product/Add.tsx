@@ -4,6 +4,30 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import axios from "axios";
 
+interface Category {
+  categoryName: string;
+  _id?: string;
+}
+
+interface ProductFormData {
+  productName: string;
+  productCode?: string;
+  category?: string;
+  brand?: string;
+  purchasePrice: number;
+  retailPrice: number;
+  wholesalePrice: number;
+  quantity: number;
+  alertQuantity?: number;
+  unit?: string;
+  tax?: number;
+  taxType?: string;
+  size?: string;
+  color?: string;
+  description?: string;
+  photo?: FileList;
+}
+
 const fieldVariants = {
   hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0 },
@@ -25,28 +49,28 @@ const containerVariants = {
 
 const Add: React.FC = () => {
   const [randomNumber, setRandomNumber] = useState<number | undefined>();
-  const [allCategories, setAllCategories] = useState<never[]>([]);
+  const [allCategories, setAllCategories] = useState<Category[]>([]);
 
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm<ProductFormData>();
 
   const generateNumber = () => {
     const number = Math.floor(Math.random() * 900000) + 100000;
     setRandomNumber(number);
   };
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: ProductFormData) => {
     try {
       const formData = new FormData();
 
       // Append regular fields
       for (const key in data) {
         if (key !== "photo") {
-          formData.append(key, data[key]);
+          formData.append(key, String(data[key as keyof ProductFormData]));
         }
       }
 
@@ -126,7 +150,7 @@ const Add: React.FC = () => {
             />
             {errors.productName && (
               <p className="text-red-500 text-xs mt-1">
-                {errors.productName.message}
+                {String(errors.productName?.message)}
               </p>
             )}
           </div>
@@ -152,7 +176,7 @@ const Add: React.FC = () => {
               Category *
             </label>
             <select
-              {...register("category", { required: "Category is required" })}
+              // {...register("category", { required: "Category is required" })}
               className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none"
             >
               {allCategories.map((category) => (
@@ -163,7 +187,7 @@ const Add: React.FC = () => {
             </select>
             {errors.category && (
               <p className="text-red-500 text-xs mt-1">
-                {errors.category.message}
+                {String(errors.category?.message)}
               </p>
             )}
           </div>
