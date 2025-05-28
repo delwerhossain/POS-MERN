@@ -17,7 +17,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // Middleware
 dotenv.config();
-app.use(cors());
+app.use(cors({
+  origin: 'https://pos-mern-pexg.vercel.app',
+  credentials: true
+}));
 app.use(express.json()); // JSON data accept করবে
 
 // Routes
